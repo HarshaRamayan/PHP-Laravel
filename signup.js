@@ -20,13 +20,17 @@ $(document).ready(function(){
             {
     
              $.post("server.php", loginData, function(data){
-            
-            if(data == 200){
-
-            $("#signUpform").trigger("reset");
-            $("#para").html("Registration successfully"); 
-            window.location.href = 'index.php';
+            data=JSON.parse(data);
+           
+            if(data.status == 200){
+                    $("#signUpform").trigger("reset");
+                    $("#para").html(data); 
+                    window.location.href = 'index.php';
             } 
+            else
+            {
+                $("#para").html(data.message); 
+            }
             });
             }
     });

@@ -28,6 +28,8 @@ session_start();
                      });
                      });
                   </script>
+                  <script src="home.js">
+                  </script>
                   <style>
                   #leftside{
                     background-color:saddlebrown;
@@ -52,9 +54,7 @@ session_start();
                   margin: 0px;
                   background: saddlebrown;
                   }
-                  #leftside{
-                  }
-                  #rightside{
+                  #leftside, #rightside{
                   background: saddlebrown;
                   }
                   li{
@@ -70,7 +70,7 @@ session_start();
                   background: saddlebrown;
                   color: white;    
                   }
-                  h1, p{
+                  h2, p{
                     color: white;
                   }
                   .followus{
@@ -78,21 +78,19 @@ session_start();
                     padding: 5px;
                   }
                   .leftsidebox{
-                      display: flex;
-                      flex-direction: column;
-                      align-items: flex-start;
-                      width: 200px; 
+                      
                       background-color: saddlebrown; 
                                                                  
                         }
-                      #up h1, #up{
+                      /* #up h1, #up{
                         color: white;
                         background-color: saddlebrown;
                       } 
                       .down{
                         background-color: saddlebrown;
-                      } 
-                  .leftsidebox>*:first-child {
+                      }  */
+                     
+                  /* .leftsidebox>*:first-child {
                               align-self: center;
                               background-color: black;
                               height: 100%;
@@ -110,7 +108,7 @@ session_start();
                       flex: 0 0 50%;
                     width: 30%;
                     background-color: grey;
-                  } */
+                  } */ */
                </style>
                <body>
                   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -132,6 +130,12 @@ session_start();
                             <h4> <a class="nav-link" href="#">Settings</a> </h4>
                            </li> -->
                         <li class="nav-item">
+                           <h4> <a class="nav-link" href="profile.php"><i class="fas fa-sign-out-alt"></i>Profile</a> </h4>
+                        </li>
+                        <li class="nav-item">
+                           <h4> <a class="nav-link" href="admin.php"><i class="fas fa-sign-out-alt"></i>Admin</a> </h4>
+                        </li>
+                        <li class="nav-item">
                            <h4> <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a> </h4>
                         </li>
                      </ul>
@@ -140,28 +144,18 @@ session_start();
 
 
 
-                     <div class="p-2 border w-50" class="leftsidebox">
+                     <div class="p-2 border w-50" id="leftside">
                         
-                        <div id="up">
+                        
                         <?php
-                           echo "<h1>Welcome ". $_SESSION['name'].",</h1>"; 
+                           echo "<h2>Welcome ". $_SESSION['name'].",</h2>"; 
                            ?>
                         <br>
-                        <!-- <div class="bg-image"></div> -->
+                      
                         <p>Our Dosa is dosa or dose is a thin pancake or crepe, originating from South India, 
                         made from a fermented batter predominantly consisting of lentils and rice. 
                         We make this batter by rolling it on the mortar and pestle not with a blender!!!!!
-                        </p><!--  -->
-                     </div>
-                    
-
-                     <div class = "down">
-
-                     <p>Our Dosa is dosa or dose is a thin pancake or crepe, originating from South India, 
-                        made from a fermented batter predominantly consisting of lentils and rice. 
-                        We make this batter by rolling it on the mortar and pestle not with a blender!!!!!
                         </p>
-                     </div>
                      </div>
 
 

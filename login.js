@@ -20,23 +20,17 @@ $(document).ready(function(){
 
         $.post("server.php", loginData, (data)=>
         {
+            data=JSON.parse(data);
             loggedin=true;
-            if(data==401)
-            {
-                $("#para").html("Invalid credentials");  
-              
-            }
-            else if(data==200)
+            if(data.status==200)
             {
                 window.location.href="home.php"
             }
             else
             {
-                $("#para").html("Please fill in the boxes to login*");  
-              
+                $("#para").html(data.message);
             }
-            // $("#para").html(data);  
-           
+            // $("#para").html(data);     
         });
     // }
     
